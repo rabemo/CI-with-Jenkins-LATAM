@@ -32,7 +32,7 @@ pipeline {
         script {
            appimage = docker.build( "rabemo/devops:${env.BUILD_ID}")
            docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
-           appimage.push("${env.BUILD_ID}")
+           appimage.push("${env.BUILD_ID}") 
            }
          }
        }
