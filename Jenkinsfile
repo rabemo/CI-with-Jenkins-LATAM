@@ -7,7 +7,7 @@ pipeline {
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
     CREDENTIALS_ID = 'JSON'
-  }   
+  }    
  stages {
      stage('Checkout SCM') {
       steps {
