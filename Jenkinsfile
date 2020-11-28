@@ -30,9 +30,9 @@ pipeline {
      stage('Build and push Docker Image') {
       steps{
         script {
-     //      appimage = docker.build("gcr.io/vaulted-quarter-260801/devops:${env.BUILD_ID}")
-     //      docker.withRegistry('https://gcr.io','gcr:gcr'){
-     //         appimage.push("${env.BUILD_ID}")
+           appimage = docker.build("gcr.io/vaulted-quarter-260801/devops:${env.BUILD_ID}")
+           docker.withRegistry('https://gcr.io','gcr:gcr'){
+           appimage.push("${env.BUILD_ID}")
            }
          }
        }
