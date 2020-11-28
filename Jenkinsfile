@@ -33,7 +33,6 @@ pipeline {
      //      appimage = docker.build("gcr.io/vaulted-quarter-260801/devops:${env.BUILD_ID}")
      //      docker.withRegistry('https://gcr.io','gcr:gcr'){
      //         appimage.push("${env.BUILD_ID}")
-              myapp = docker.build("DOCKER-HUB-USERNAME/hello:${env.BUILD_ID}") 
            }
          }
        }
