@@ -48,5 +48,5 @@ pipeline {
   //     echo "Deployment to Kubernetes cluster completed.."
   //   }
   //  }
-    }
+  //  }
 }
