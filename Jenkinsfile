@@ -34,7 +34,7 @@ pipeline {
        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
          sh "docker login -u rabemo -p ${dockerHubPwd}"
         }
-       sh 'docker build -t rabemo/devops:2.0.0 .'
+       sh "docker build -t rabemo/devops:${env.BUILD_ID}"
       }
      }
   
