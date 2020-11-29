@@ -29,8 +29,9 @@ pipeline {
      }
  }   //esta llave viene de abajo
  
-   stage('Build Docker Image'){
-     sh 'docker build -t rabemo/devops:${env.BUILD_ID}'
+   stage('Build Docker Image') {
+     echo "Build Docker Image.."
+     sh 'docker build -t rabemo/devops:2.0.0 .'
    }
   
   
