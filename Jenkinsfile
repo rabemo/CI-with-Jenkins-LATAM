@@ -31,7 +31,7 @@ pipeline {
      stage('Build Docker Image') {
       steps {
        echo "Build Docker Image.."
-       sh 'docker build -t rabemo/devops:${env.BUILD_ID}'
+       sh 'docker build -t rabemo/devops:2.0.0 .'
       }
      }
   
