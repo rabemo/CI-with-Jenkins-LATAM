@@ -27,16 +27,22 @@ pipeline {
        sh 'mvn test'
       }
      }
-     stage('Build and push Docker Image') {
-      steps{
-        script {
-           appimage = docker.build( "rabemo/devops:${env.BUILD_ID}")
-           docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
-           appimage.push("${env.BUILD_ID}") 
-           }
-         }
-       }
-      }
+   stage('Build Docker Image'){
+     sh 'docker build -t rabemo/devops:${env.BUILD_ID}'
+   }
+  
+  
+  
+  //   stage('Build and push Docker Image') {
+  //    steps{
+  //      script {
+  //         appimage = docker.build( "rabemo/devops:${env.BUILD_ID}")
+  //         docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
+  //         appimage.push("${env.BUILD_ID}") 
+  //         }
+  //       }
+  //     }
+  //    }
     
   //  stage('Deploy to Kubernetes') {
   //    steps {
