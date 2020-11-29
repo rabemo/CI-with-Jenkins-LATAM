@@ -31,6 +31,9 @@ pipeline {
      stage('Build Docker Image') {
       steps {
        echo "Build Docker Image.."
+       withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+         sh "docker login -u rabemo -p ${dockerHubPwd}"
+        }
        sh 'docker build -t rabemo/devops:2.0.0 .'
       }
      }
@@ -39,7 +42,7 @@ pipeline {
   //   stage('Build and push Docker Image') {
   //    steps{
   //      script {
-  //         appimage = docker.build( "rabemo/devops:${env.BUILD_ID}")
+  //         appimage = docker.build( "rabemo/devops:c")
   //         docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
   //         appimage.push("${env.BUILD_ID}") 
   //         }
