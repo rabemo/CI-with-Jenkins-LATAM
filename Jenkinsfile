@@ -28,10 +28,10 @@ pipeline {
       }
      }
  
-   stage('Build Docker Image') {
-     echo "Build Docker Image.."
-   //  sh 'docker build -t rabemo/devops:2.0.0 .'
-   }
+  // stage('Build Docker Image') {
+  //   echo "Build Docker Image.."
+   //  sh 'docker build -t rabemo/devops:${env.BUILD_ID}'
+  // }
   
   
   //   stage('Build and push Docker Image') {
