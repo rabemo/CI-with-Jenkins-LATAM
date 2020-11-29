@@ -27,7 +27,6 @@ pipeline {
        sh 'mvn test'
       }
      }
- }   //esta llave viene de abajo
  
    stage('Build Docker Image') {
      echo "Build Docker Image.."
@@ -44,7 +43,7 @@ pipeline {
   //         }
   //       }
   //     }
-  //    }
+     }
     
   //  stage('Deploy to Kubernetes') {
   //    steps {
