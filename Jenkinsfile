@@ -31,7 +31,7 @@ pipeline {
  
    stage('Build Docker Image') {
      echo "Build Docker Image.."
-     sh 'docker build -t rabemo/devops:2.0.0 .'
+   //  sh 'docker build -t rabemo/devops:2.0.0 .'
    }
   
   
