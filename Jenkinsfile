@@ -27,6 +27,7 @@ pipeline {
        sh 'mvn test'
       }
      }
+  
    stage('Build Docker Image'){
      sh 'docker build -t rabemo/devops:${env.BUILD_ID}'
    }
@@ -41,7 +42,7 @@ pipeline {
   //         }
   //       }
   //     }
-  //    }
+      }
     
   //  stage('Deploy to Kubernetes') {
   //    steps {
