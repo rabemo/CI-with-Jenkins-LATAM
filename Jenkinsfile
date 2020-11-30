@@ -36,7 +36,7 @@ pipeline {
             echo "${password} | docker login -u ${username} --password-stdin"
        
        //sh "docker build -t rabemo/cheers2019:${env.BUILD_ID} ."
-            def app = docker.build("-t rabemo/cheers2019:${env.BUILD_ID} .")
+            def app = docker.build('-t "rabemo/cheers2019:${env.BUILD_ID} ."')
             app.push("latest")
            }
          }
