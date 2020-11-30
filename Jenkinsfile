@@ -31,8 +31,8 @@ pipeline {
      stage('Build Docker Image') {
       steps {
        echo "Build Docker Image.."
-       withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-        sh "docker login --username rabemo --password-stdin"
+       withCredentials([usernamePassword(credentialsId: 'docker-login-creds', passwordVariable: 'password', usernameVariable: 'username')]) {
+         echo "${password} | docker login -u ${username} --password-stdin"
         }
        sh "docker build -t rabemo/devops:${env.BUILD_ID}"
       }
