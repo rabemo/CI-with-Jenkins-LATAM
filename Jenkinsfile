@@ -34,7 +34,7 @@ pipeline {
        withCredentials([usernamePassword(credentialsId: 'docker-login-creds', passwordVariable: 'password', usernameVariable: 'username')]) {
          echo "${password} | docker login -u ${username} --password-stdin"
         }
-       sh "docker build -t rabemo/devops:${env.BUILD_ID} ."
+       sh "docker build -t rabemo/cheers2019:${env.BUILD_ID} ."
       }
      }
   
