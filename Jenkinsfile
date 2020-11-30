@@ -32,7 +32,7 @@ pipeline {
       steps {
        echo "Build Docker Image.."
        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-         sh "docker login -u rabemo -p ${dockerHubPwd}"
+         $ echo "${dockerHubPwd}" | sh "docker login -u rabemo --password-stdin"
         }
        sh "docker build -t rabemo/devops:${env.BUILD_ID}"
       }
